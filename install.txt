@@ -1,0 +1,78 @@
+adduser username
+
+usermod -aG sudo username
+
+https://www.tecmint.com/disable-root-login-in-linux/
+
+sudo vim /etc/passwd
+Change the line:
+
+root:x:0:0:root:/root:/bin/bash
+to
+root:x:0:0:root:/root:/sbin/nologin
+
+https://www.emqx.com/en/blog/how-to-use-mqtt-in-react
+
+
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install gcc g++ make
+sudo apt-get install -y nodejs
+
+
+package.json
+{
+  "name": "react-mqtt-test",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "react-scripts": "5.0.0"
+  },
+  "overrides": {
+    "react-scripts": {        
+        "@svgr/webpack": "^6.1.2"          
+    }        
+},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+
+
+https://www.eclipse.org/paho/index.php?page=clients/cpp/index.php
+
+https://reactjs.org/docs/add-react-to-a-website.html
+
+https://www.emqx.com/en/blog/how-to-use-mqtt-in-react
+
+https://github.com/emqx/MQTT-Client-Examples/tree/master/mqtt-client-WebSocket
+
+npm install --save typescript @types/node @types/react @types/react-dom @types/jest
