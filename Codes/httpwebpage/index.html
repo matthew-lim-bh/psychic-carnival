@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weboscoket MQTT</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>Light Demo</h1>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th style="width: 20%" scope="col">Mode</th>
+                    <th style="width: 20%" scope="col">Status</th>
+                    <th style="width: 20%" scope="col">Cue</th>
+                    <th style="width: 20%" scope="col">Intensity</th>
+                    <th style="width: 20%" scope="col">Speed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Mono</th>
+                    <td>Playing</td>
+                    <td>Cue</td>
+                    <td>Intensity</td>
+                    <td>Speed</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="slider-intensity" class="form-label">Intensity: <span id="slider-intensityval">100
+                            <!-- Default value -->
+                            </span></label>
+                    <!--https://seiyria.com/bootstrap-slider/-->
+                        <input id="slider-intensity" type="range" class="form-range" min=0 max=255 value=100 onInput="$('#slider-intensityval').html($(this).val())" />
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="slider-speed" class="form-label">Speed: <span id="slider-speedval">100
+                                <!-- Default value -->
+                            </span></label>
+                        <!--https://seiyria.com/bootstrap-slider/-->
+                        <input id="slider-speed" type="range" class="form-range" min=0 max=255 value=100 onInput="$('#slider-speedval').html($(this).val())" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <h3>Run Mode</h3>
+        <div class="btn-group d-flex" role="group" aria-label="Mode Selection">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio-weekly" autocomplete="off" checked="">
+            <label class="btn btn-outline-primary" for="btnradio-weekly">Weekly</label>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio-festive" autocomplete="off" checked="">
+            <label class="btn btn-outline-primary" for="btnradio-festive">Festive</label>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio-mono" autocomplete="off" checked="">
+            <label class="btn btn-outline-primary" for="btnradio-mono">Mono</label>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio-manual" autocomplete="off" checked="">
+            <label class="btn btn-outline-primary" for="btnradio-manual">Manual</label>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio-external" autocomplete="off" checked="">
+            <label class="btn btn-outline-primary" for="btnradio-external">External</label>
+        </div>
+
+        <h2>Logs</h2>
+        <ul id="console"></ul>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

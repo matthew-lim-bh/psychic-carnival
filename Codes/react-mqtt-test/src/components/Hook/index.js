@@ -3,7 +3,7 @@ import Connection from './Connection';
 import Publisher from './Publisher';
 import Subscriber from './Subscriber';
 import Receiver from './Receiver';
-import mqtt from 'mqtt';
+import mqtt from 'mqtt/dist/mqtt';
 
 export const QosOption = createContext([])
 const qosOption = [
